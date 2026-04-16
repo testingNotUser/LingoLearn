@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Courses from './components/Courses';
@@ -10,7 +10,7 @@ import QuizPage from './pages/QuizPage';
 
 function App() {
   return (
-    <Router basename="/LingoLearn">
+    <Router>
       <div className="app">
         <Navbar />
         <Routes>
