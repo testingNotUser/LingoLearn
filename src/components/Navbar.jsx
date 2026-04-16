@@ -17,9 +17,9 @@ export default function Navbar({ user, setUser }) {
       <nav className={scrolled ? 'scrolled' : ''}>
         <div className="grid-container nav-grid">
           <Link to="/" className="logo" style={{ fontSize: '1.5rem', fontWeight: '800', color: 'white', textDecoration: 'none' }}>
-            Lingo<span style={{ color: 'var(--primary-light)' }}>Leap</span>
+            Lingo<span style={{ color: 'var(--primary-light)' }}>Learn</span>
           </Link>
-          
+
           <div className="nav-links">
             <Link to="/">Home</Link>
             <Link to="/courses">Courses</Link>
@@ -28,22 +28,17 @@ export default function Navbar({ user, setUser }) {
           </div>
 
           <button 
-            className={`btn ${user ? 'btn-outline' : 'btn-primary'}`} 
+            className={"btn " + (user ? 'btn-outline' : 'btn-primary')}
             onClick={() => user ? null : setIsModalOpen(true)}
           >
             {user || 'Login'}
           </button>
         </div>
       </nav>
-
-      <LoginModal 
-        isOpen={isModalOpen} 
-        onClose={() => setIsModalOpen(false)} 
-        onSuccess={(name) => {
-          setUser(name);
-          localStorage.setItem('lingoUser', name);
-        }}
-      />
+      <LoginModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} onSuccess={(name) => {
+        setUser(name);
+        localStorage.setItem('lingoUser', name);
+      }} />
     </>
   );
 }
