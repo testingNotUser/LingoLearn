@@ -20,7 +20,6 @@ export default function CoursesPage() {
         </div>
 
         <div className="col-12">
-          {/* Forced 3 columns on desktop, adapts to vertical stack on mobile */}
           <div className="responsive-3-grid">
             {courses.map(course => (
               <div key={course.id} className="glass course-card">
