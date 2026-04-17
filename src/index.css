@@ -29,6 +29,7 @@ body {
 }
 
 /* --- GRID SYSTEM --- */
+
 .grid-container {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
@@ -38,23 +39,49 @@ body {
   padding: 0 2rem;
 }
 
-/* Ensure direct children of grid-container span full width by default unless specialized */
-/* Refined: only apply to items that don't have specific col-* classes or are not in a custom grid */
 .page-section {
   grid-column: span 12;
 }
 
 /* Layout Utilities */
+
 .col-12 { grid-column: span 12; }
+
 .col-9 { grid-column: span 9; }
+
 .col-8 { grid-column: span 8; }
+
 .col-6 { grid-column: span 6; }
+
 .col-4 { grid-column: span 4; }
+
 .col-3 { grid-column: span 3; }
 
 @media (max-width: 968px) {
   .col-lg-3, .col-lg-4, .col-lg-6, .col-lg-8, .col-lg-9 {
     grid-column: span 12;
+  }
+}
+
+/* Premium Desktop Padding */
+
+@media (min-width: 1024px) {
+  .premium-padding {
+    padding-left: 10rem !important;
+    padding-right: 10rem !important;
+  }
+  .responsive-3-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem;
+  }
+}
+
+@media (max-width: 968px) {
+  .responsive-3-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
   }
 }
 
@@ -112,6 +139,7 @@ body {
 }
 
 /* --- NAVIGATION (Grid) --- */
+
 nav {
   position: fixed;
   top: 0;
@@ -153,6 +181,7 @@ nav.scrolled {
 }
 
 /* --- HERO (Grid) --- */
+
 .hero {
   min-height: 100vh;
   padding-top: 80px;
@@ -179,6 +208,7 @@ nav.scrolled {
 }
 
 /* --- COURSE GRID --- */
+
 .course-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -200,6 +230,7 @@ nav.scrolled {
 }
 
 /* --- QUIZ (Grid) --- */
+
 .quiz-container {
   display: grid;
   gap: 2rem;
@@ -214,6 +245,7 @@ nav.scrolled {
 }
 
 /* Responsive */
+
 @media (max-width: 1024px) {
   .nav-links {
     gap: 1.5rem;
