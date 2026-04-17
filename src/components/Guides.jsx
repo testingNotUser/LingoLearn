@@ -8,7 +8,7 @@ const guides = [
 
 export default function Guides() {
   return (
-    <section id="about" className="guides-section" style={{ padding: '8rem 0' }}>
+    <section id="about" className="guides-section premium-padding" style={{ padding: '8rem 0' }}>
       <div className="container">
         <h2 style={{ fontSize: '2.5rem', marginBottom: '3rem', textAlign: 'center' }}>Meet Your Guides</h2>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '2rem' }}>
