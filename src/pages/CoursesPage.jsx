@@ -10,25 +10,18 @@ export default function CoursesPage() {
   return (
     <section style={{ padding: '12rem 0 8rem' }}>
       <div className="grid-container">
-        <div className="col-4">
+        <div className="col-12" style={{ textAlign: 'center', marginBottom: '4rem' }}>
           <h1 className="text-gradient" style={{ fontSize: '4rem', marginBottom: '1.5rem', lineHeight: '1.1' }}>
             Explore Our Courses
           </h1>
-          <p style={{ color: 'var(--text-muted)', fontSize: '1.2rem', marginBottom: '2rem' }}>
+          <p style={{ color: 'var(--text-muted)', fontSize: '1.2rem', maxWidth: '700px', margin: '0 auto' }}>
             Choose your language and start your journey today. Our courses are designed by linguistic experts.
           </p>
-          <div className="glass" style={{ padding: '1.5rem', marginTop: '2rem' }}>
-            <h4 style={{ marginBottom: '1rem' }}>Why LingoLeap?</h4>
-            <ul style={{ listStyle: 'none', color: 'var(--text-muted)', fontSize: '0.9rem' }}>
-              <li style={{ marginBottom: '0.5rem' }}>✓ Native instructors</li>
-              <li style={{ marginBottom: '0.5rem' }}>✓ AI-driven feedback</li>
-              <li>✓ Certificate of completion</li>
-            </ul>
-          </div>
         </div>
 
-        <div className="col-8">
-          <div className="course-grid" style={{ marginTop: '0' }}>
+        <div className="col-12">
+          {/* Forced 3 columns on desktop, adapts to vertical stack on mobile */}
+          <div className="responsive-3-grid">
             {courses.map(course => (
               <div key={course.id} className="glass course-card">
                 <div style={{ 
@@ -54,6 +47,23 @@ export default function CoursesPage() {
                 </Link>
               </div>
             ))}
+          </div>
+        </div>
+
+        <div className="col-12" style={{ marginTop: '4rem' }}>
+          <div className="glass" style={{ padding: '2.5rem', display: 'flex', justifyContent: 'space-around', alignItems: 'center', gap: '2rem', flexWrap: 'wrap' }}>
+            <div style={{ textAlign: 'center' }}>
+              <h4 style={{ color: 'var(--primary-light)', marginBottom: '0.5rem' }}>Native instructors</h4>
+              <p style={{ fontSize: '0.9rem', color: 'var(--text-muted)' }}>Learn from the best.</p>
+            </div>
+            <div style={{ textAlign: 'center' }}>
+              <h4 style={{ color: 'var(--primary-light)', marginBottom: '0.5rem' }}>AI-driven feedback</h4>
+              <p style={{ fontSize: '0.9rem', color: 'var(--text-muted)' }}>Master pronunciation.</p>
+            </div>
+            <div style={{ textAlign: 'center' }}>
+              <h4 style={{ color: 'var(--primary-light)', marginBottom: '0.5rem' }}>Certificate</h4>
+              <p style={{ fontSize: '0.9rem', color: 'var(--text-muted)' }}>Get recognized.</p>
+            </div>
           </div>
         </div>
       </div>
